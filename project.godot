@@ -27,6 +27,10 @@ project/assembly_name="Muwollok"
 
 enabled=PackedStringArray("res://addons/GodotInk/plugin.cfg")
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.ko.translation", "res://localization/strings.ru.translation")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
