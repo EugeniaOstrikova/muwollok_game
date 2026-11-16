@@ -2,3 +2,44 @@ keys,en,ru,ko
 UI_TEST,Hello,Привет,안녕하세요
 GAME_TITLE,Manual of the Righteous Inquest,Руководство по справедливому расследованию,무원록
 MENU_START,Start,Начать,시작
+
+# ---- Тестовое дело ----,,,
+DOC_CHOGEOM,Initial inquest,Первичный осмотр,초검
+DOC_BOKGEOM,Second inquest,Повторный осмотр,복검
+
+UI_MARK_MISMATCH,Mark a mismatch,Указать несоответствие,불일치 지적
+UI_NO_MISMATCH,These records do not contradict each other,Здесь нет противоречия,모순이 없음
+
+TEST_FIND_CAUSE,The inquests name different causes of death,Осмотры называют разные причины смерти,두 검험의 실인이 다름
+TEST_FIND_NECK,The inquests describe the neck furrow differently,Осмотры по-разному описывают борозду на шее,두 검험이 목의 끈 자국을 다르게 기록함
+TEST_FIND_TORSO,Self-hanging does not explain the bruise on the ribs,Самоповешение не объясняет синяк на рёбрах,자액으로는 갈비의 멍이 설명되지 않음
+
+# ---- Страницы бланка ----,,,
+PAGE_COVER,Cover,Обложка,표지
+PAGE_FRONT,Body: front,Тело спереди,앙면(仰面)
+PAGE_BACK,Body: back,Тело сзади,합면(合面)
+PAGE_WEAPON,Weapon,Орудие,흉기
+
+# ---- Новые графы ----,,,
+FIELD_NAPE,Back of the head,Затылок,뒤통수
+FIELD_BACK,Back,Спина,등
+FIELD_CAUSE,Cause of death,Причина смерти,실인
+FIELD_WEAPON,Weapon,Орудие,흉기
+FIELD_HEAD,Head,Голова,머리
+FIELD_NECK,Neck,Шея,목
+FIELD_TORSO,Torso,Туловище,몸통
+
+# ---- Режимы ----,,,
+UI_MODE_STUDY,Study,Изучение,검토
+UI_MODE_COMPARE,Compare,Сравнение,대조
+
+# ---- Тестовое дело: общее ----,,,
+TEST_C_CAUSE,Self-hanging,Самоповешение,자액(自縊)
+TEST_WEAPON,Hemp rope,Конопляная верёвка,삼베 끈
+TEST_C_HEAD,"Intact, yellowish-white, soft","Цела, желтовато-белая, мягкая","온전함, 황백색, 부드러움"
+TEST_C_NECK,The furrow slants up behind the ears and breaks off,Борозда косо уходит вверх за уши и обрывается,끈 자국이 귀 뒤로 비스듬히 올라가다 끊김
+TEST_TORSO,"Bruise on the left ribs, dark purple, hard","Синяк на левых рёбрах, тёмно-фиолетовый, твёрдый","왼쪽 갈비에 멍, 자암색, 단단함"
+TEST_B_CAUSE,Strangled by another person,Задушен другим человеком,타인에 의한 교살
+TEST_B_HEAD,Skin has come off in places,Кожа местами сошла,피부가 군데군데 벗겨짐
+TEST_B_NECK,The furrow runs level around the neck and crosses at the nape,Борозда идёт ровно вокруг шеи и перекрещивается на затылке,끈 자국이 목을 수평으로 두르고 뒷목에서 교차함
+TEST_INTACT,"Intact, yellowish-white, soft","Цел, желтовато-белый, мягкий","온전함, 황백색, 부드러움"

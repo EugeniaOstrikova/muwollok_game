@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://iw6tp5we66gw"]
+
+[ext_resource type="Script" uid="uid://bhcu6n6hsyr67" path="res://scripts/Components/PageView.cs" id="1_w8qtv"]
+[ext_resource type="PackedScene" uid="uid://b47xbmfep6bxb" path="res://scenes/components/FieldView.tscn" id="2_us0ie"]
+
+[node name="PageView" type="PanelContainer" unique_id=775942594]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w8qtv")
+FieldScene = ExtResource("2_us0ie")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1683722363]
+layout_mode = 2
+
+[node name="DocTitle" type="Label" parent="VBoxContainer" unique_id=1072995281]
+layout_mode = 2
+
+[node name="PageTitle" type="Label" parent="VBoxContainer" unique_id=1822346641]
+layout_mode = 2
+
+[node name="Fields" type="VBoxContainer" parent="VBoxContainer" unique_id=242146093]
+layout_mode = 2
