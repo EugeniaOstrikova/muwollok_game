@@ -1,7 +1,10 @@
 keys,en,ru,ko
-UI_TEST,Hello,Привет,안녕하세요
+
+# ---- UI texts ----,,,
 GAME_TITLE,Manual of the Righteous Inquest,Руководство по справедливому расследованию,무원록
-MENU_START,Start,Начать,시작
+MENU_START,Begin,Начать,시작
+MENU_SETTINGS,Settings,Настройки,설정
+MENU_EXIT,Exit,Выйти,종료
 
 # ---- Тестовое дело ----,,,
 DOC_CHOGEOM,Initial inquest,Первичный осмотр,초검
