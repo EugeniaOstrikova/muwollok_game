@@ -9,10 +9,10 @@ public partial class PageView : PanelContainer
 
     public void Setup(DocumentData document, PageData page)
     {
-        GetNode<Label>("VBoxContainer/DocTitle").Text = document.Title;
-        GetNode<Label>("VBoxContainer/PageTitle").Text = page.Title;
+        GetNode<Label>("%DocTitle").Text = document.Title;
+        GetNode<Label>("%PageTitle").Text = page.Title;
 
-        var fields = GetNode<VBoxContainer>("VBoxContainer/Fields");
+        var fields = GetNode<VBoxContainer>("%Fields");
 
         // Убираем графы предыдущей страницы
         foreach (Node child in fields.GetChildren())

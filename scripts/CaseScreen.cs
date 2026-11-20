@@ -3,22 +3,19 @@ using Muwollok.Data;
 
 public partial class CaseScreen : Control
 {
-    private enum Mode { Study, Compare }
+    // Игрок нажал «назад» — GameScreen вернёт вид кабинета
+    [Signal] public delegate void BackPressedEventHandler();
 
     private FormData _form;
     private CaseData _case;
 
-    // Состояние экрана
-    private Mode _mode = Mode.Study;
-    private int _studyDocument = 0; // 0 = 초검, 1 = 복검
-    private int _leftPage = 0;
-    private int _rightPage = 1;
+    private int _document = 0;    // какую книгу взяли со стола: 0 = 초검, 1 = 복검
+    private int _spreadStart = 0; // номер левой страницы разворота: 0, 2, 4…
 
     private PageView _leftView;
     private PageView _rightView;
-    private HBoxContainer _leftTabs;
-    private HBoxContainer _rightTabs;
-	private HBoxContainer _modeBar;
+    private Button _prevBtn;
+    private Button _nextBtn;
 
     public override void _Ready()
     {
@@ -27,95 +24,49 @@ public partial class CaseScreen : Control
 
         _leftView = GetNode<PageView>("%LeftPage");
         _rightView = GetNode<PageView>("%RightPage");
-        _leftTabs = GetNode<HBoxContainer>("%LeftTabs");
-        _rightTabs = GetNode<HBoxContainer>("%RightTabs");
-        _modeBar = GetNode<HBoxContainer>("%ModeBar");
+        _prevBtn = GetNode<Button>("%PrevBtn");
+        _nextBtn = GetNode<Button>("%NextBtn");
 
-        CreateTabs(_leftTabs, isLeft: true);
-        CreateTabs(_rightTabs, isLeft: false);
-        CreateModeButtons();
+        _prevBtn.Pressed += () => Flip(-2);
+        _nextBtn.Pressed += () => Flip(2);
 
-        Refresh();
-    }
-
-    // По кнопке на каждую страницу бланка
-    private void CreateTabs(HBoxContainer container, bool isLeft)
-    {
-        for (int i = 0; i < _form.Pages.Count; i++)
-        {
-            int pageIndex = i; // своя копия для каждой кнопки
-            var button = new Button { Text = _form.Pages[i].Title };
-            button.Pressed += () => OnTabPressed(isLeft, pageIndex);
-            container.AddChild(button);
-        }
-    }
-
-    private void OnTabPressed(bool isLeft, int pageIndex)
-    {
-        // В сравнении обе стороны листаются вместе
-        if (_mode == Mode.Compare || isLeft)
-            _leftPage = pageIndex;
-        else
-            _rightPage = pageIndex;
+        GetNode<Button>("Layout/BtnContainer/BackBtn").Pressed +=
+            () => EmitSignal(SignalName.BackPressed);
 
         Refresh();
     }
 
-	    // Кнопка «изучить» на каждый документ + кнопка «сравнить»
-    private void CreateModeButtons()
+    // Вызывает GameScreen: игрок взял книгу со стола — открываем её с начала
+    public void OpenDocument(int docIndex)
     {
-        for (int i = 0; i < _case.Documents.Count; i++)
-        {
-            int docIndex = i;
-            var button = new Button { Text = _case.Documents[i].Title };
-            button.Pressed += () => SetStudyMode(docIndex);
-            _modeBar.AddChild(button);
-        }
-
-        var compare = new Button { Text = "UI_MODE_COMPARE" };
-        compare.Pressed += SetCompareMode;
-        _modeBar.AddChild(compare);
-    }
-
-    private void SetStudyMode(int docIndex)
-    {
-        _mode = Mode.Study;
-        _studyDocument = docIndex;
+        _document = docIndex;
+        _spreadStart = 0;
         Refresh();
     }
 
-    private void SetCompareMode()
+    // Листаем на целый разворот: -2 назад, +2 вперёд
+    private void Flip(int delta)
     {
-        _mode = Mode.Compare;
+        _spreadStart += delta;
         Refresh();
     }
 
-    // Перерисовать разворот по текущему состоянию
+    // Перерисовать разворот: две страницы подряд из выбранной книги
     private void Refresh()
     {
-        if (_mode == Mode.Study)
-        {
-            var doc = _case.Documents[_studyDocument];
-            _leftView.Setup(doc, _form.Pages[_leftPage]);
-            _rightView.Setup(doc, _form.Pages[_rightPage]);
-        }
-        else
-        {
-            _leftView.Setup(_case.Documents[0], _form.Pages[_leftPage]);
-            _rightView.Setup(_case.Documents[1], _form.Pages[_leftPage]);
-        }
+        var doc = _case.Documents[_document];
+        int pageCount = _form.Pages.Count;
 
-        HighlightTab(_leftTabs, _leftPage);
-        HighlightTab(_rightTabs, _mode == Mode.Compare ? _leftPage : _rightPage);
-		        // Кнопки документов идут первыми, «Сравнение» — последней
-        int activeMode = _mode == Mode.Compare ? _case.Documents.Count : _studyDocument;
-        HighlightTab(_modeBar, activeMode);
-    }
+        _leftView.Setup(doc, _form.Pages[_spreadStart]);
 
-    // Текущая закладка неактивна — так видно, какая страница открыта
-    private static void HighlightTab(HBoxContainer tabs, int current)
-    {
-        for (int i = 0; i < tabs.GetChildCount(); i++)
-            tabs.GetChild<Button>(i).Disabled = i == current;
+        // Если страниц нечётное число, на последнем развороте правой страницы нет
+        bool hasRight = _spreadStart + 1 < pageCount;
+        _rightView.Visible = hasRight;
+        if (hasRight)
+            _rightView.Setup(doc, _form.Pages[_spreadStart + 1]);
+
+        // На первом развороте назад нельзя, на последнем — вперёд
+        _prevBtn.Disabled = _spreadStart == 0;
+        _nextBtn.Disabled = _spreadStart + 2 >= pageCount;
     }
 }

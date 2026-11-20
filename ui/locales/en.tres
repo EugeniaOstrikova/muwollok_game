@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bgwf1p4fc77e6" path="res://scripts/LocaleLook.cs" id="1_g2kki"]
 [ext_resource type="Texture2D" uid="uid://bgura6cquys1g" path="res://assets/covers/start_bg_en.png" id="1_m0xmi"]
+[ext_resource type="FontFile" uid="uid://g6h42f0ygfxo" path="res://assets/fonts/Manglo-7OR4.ttf" id="1_ts264"]
 [ext_resource type="FontFile" uid="uid://1xpalj52g5tk" path="res://assets/fonts/TakashimuraRegular.ttf" id="2_qklr6"]
 
 [resource]
 script = ExtResource("1_g2kki")
 Cover = ExtResource("1_m0xmi")
 UiFont = ExtResource("2_qklr6")
+BookFont = ExtResource("1_ts264")
 MenuFont = ExtResource("2_qklr6")
 metadata/_custom_type_script = "uid://bgwf1p4fc77e6"

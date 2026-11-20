@@ -16,14 +16,26 @@ texture = ExtResource("3_gootd")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1683722363]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1956271049]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1683722363]
 layout_mode = 2
 
-[node name="DocTitle" type="Label" parent="VBoxContainer" unique_id=1072995281]
+[node name="DocTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1072995281]
+unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"BookText"
 
-[node name="PageTitle" type="Label" parent="VBoxContainer" unique_id=1822346641]
+[node name="PageTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1822346641]
+unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"BookText"
 
-[node name="Fields" type="VBoxContainer" parent="VBoxContainer" unique_id=242146093]
+[node name="Fields" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=242146093]
+unique_name_in_owner = true
 layout_mode = 2

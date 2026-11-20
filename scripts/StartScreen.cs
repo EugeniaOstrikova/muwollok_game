@@ -29,7 +29,7 @@ public partial class StartScreen : Control
         ApplyLanguage(selected);
 
         GetNode<Button>("VBoxContainer/StartBtn").Pressed +=
-            () => GetTree().ChangeSceneToFile("res://scenes/DeskView.tscn");
+            () => GetTree().ChangeSceneToFile("res://scenes/GameScreen.tscn");
     }
 
     private void ApplyLanguage(int index)
@@ -39,7 +39,7 @@ public partial class StartScreen : Control
 
         _background.Texture = look.Cover;
         MainTheme.DefaultFont = look.UiFont; // настройки, списки, всё без своей роли
-        SetRoleFont("BookText", "normal_font", look.BookFont);
+        SetRoleFont("BookText", "font", look.BookFont);
         SetRoleFont("DialogueText", "normal_font", look.DialogueFont);
         SetRoleFont("HintText", "normal_font", look.HintFont);
         SetRoleFont("StartMenuButton", "font", look.MenuFont);

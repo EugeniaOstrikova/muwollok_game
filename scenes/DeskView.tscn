@@ -49,11 +49,6 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="ModeBar" type="HBoxContainer" parent="Layout" unique_id=438568260]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-
 [node name="Spread" type="HBoxContainer" parent="Layout" unique_id=1237037327]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -62,9 +57,11 @@ theme_override_constants/separation = 16
 [node name="LeftSide" type="VBoxContainer" parent="Layout/Spread" unique_id=1972362391]
 layout_mode = 2
 
-[node name="LeftTabs" type="HBoxContainer" parent="Layout/Spread/LeftSide" unique_id=577856524]
+[node name="PrevBtn" type="Button" parent="Layout/Spread/LeftSide" unique_id=574695979]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+text = "◀"
 
 [node name="LeftPage" parent="Layout/Spread/LeftSide" unique_id=775942594 instance=ExtResource("2_b21ka")]
 unique_name_in_owner = true
@@ -74,9 +71,11 @@ layout_mode = 2
 [node name="RightSide" type="VBoxContainer" parent="Layout/Spread" unique_id=539093640]
 layout_mode = 2
 
-[node name="RightTabs" type="HBoxContainer" parent="Layout/Spread/RightSide" unique_id=1335201326]
+[node name="NextBtn" type="Button" parent="Layout/Spread/RightSide" unique_id=406649541]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+text = "▶"
 
 [node name="RightPage" parent="Layout/Spread/RightSide" unique_id=1050811387 instance=ExtResource("2_b21ka")]
 unique_name_in_owner = true

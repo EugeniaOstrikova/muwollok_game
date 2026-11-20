@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://c40nvalwg8684"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gootd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvosd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -50,7 +53,11 @@ border_color = Color(0.06879827, 0.06879828, 0.06879828, 1)
 
 [resource]
 default_font_size = 16
-BookText/base_type = &"RichTextLabel"
+BookField/base_type = &"PanelContainer"
+BookField/styles/panel = SubResource("StyleBoxFlat_gootd")
+BookText/base_type = &"Label"
+BookText/colors/font_color = Color(0, 0, 0, 1)
+BookText/font_sizes/font_size = 32
 DialogueText/base_type = &"RichTextLabel"
 HintText/base_type = &"RichTextLabel"
 IconButton/base_type = &"Button"

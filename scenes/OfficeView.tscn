@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c40nvalwg8684" path="res://ui/main_theme.tres" id="1_avkaa"]
 [ext_resource type="Texture2D" uid="uid://b0qa275pj7s4l" path="res://assets/covers/office_bg.png" id="1_wyssb"]
+[ext_resource type="Script" uid="uid://cmvvacy6ojctv" path="res://scripts/OfficeView.cs" id="2_qf1nj"]
 [ext_resource type="Texture2D" uid="uid://ci17w2lkdljmy" path="res://assets/items/book_1.png" id="2_rep0b"]
 [ext_resource type="Texture2D" uid="uid://d0fysu1xt0h5m" path="res://assets/items/book_2.png" id="3_avkaa"]
 [ext_resource type="Texture2D" uid="uid://c4pcrttqa8imu" path="res://assets/items/note_s.png" id="5_jmoq8"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_avkaa")
+script = ExtResource("2_qf1nj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1546000100]
 layout_mode = 1
@@ -43,16 +45,19 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Book1" type="TextureButton" parent="MarginContainer/DeskLayout" unique_id=2051647018]
+unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Book 1"
 texture_normal = ExtResource("2_rep0b")
 stretch_mode = 5
 
 [node name="Book2" type="TextureButton" parent="MarginContainer/DeskLayout" unique_id=959221437]
+unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("3_avkaa")
 
 [node name="Notes" type="TextureButton" parent="MarginContainer/DeskLayout" unique_id=870566829]
+unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("5_jmoq8")
 stretch_mode = 5

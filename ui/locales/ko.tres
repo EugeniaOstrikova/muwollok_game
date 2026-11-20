@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="LocaleLook" format=3 uid="uid://cnkmhpocgo05j"]
 
+[ext_resource type="FontFile" uid="uid://dvyde6ab4xmqi" path="res://assets/fonts/YeonSung-Regular.ttf" id="1_2clkn"]
 [ext_resource type="Script" uid="uid://bgwf1p4fc77e6" path="res://scripts/LocaleLook.cs" id="1_57axu"]
 [ext_resource type="Texture2D" uid="uid://djq4rra4ojqil" path="res://assets/covers/start_bg_ko.png" id="1_nkaj3"]
 [ext_resource type="FontFile" uid="uid://dxe1yqm668myi" path="res://assets/fonts/SuseongBatang.ttf" id="2_ogq6c"]
@@ -8,5 +9,6 @@
 script = ExtResource("1_57axu")
 Cover = ExtResource("1_nkaj3")
 UiFont = ExtResource("2_ogq6c")
+BookFont = ExtResource("1_2clkn")
 MenuFont = ExtResource("2_ogq6c")
 metadata/_custom_type_script = "uid://bgwf1p4fc77e6"
