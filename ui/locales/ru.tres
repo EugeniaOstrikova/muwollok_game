@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LocaleLook" format=3 uid="uid://d3ay1kiyj0ecc"]
+
+[ext_resource type="Texture2D" uid="uid://d1ayvamrpmk7i" path="res://assets/covers/start_bg_ru.png" id="1_2d4rq"]
+[ext_resource type="FontFile" uid="uid://cxn6turb7wwxj" path="res://assets/fonts/GangOfFour2015_EFIGS.ttf" id="1_i8v20"]
+[ext_resource type="Script" uid="uid://bgwf1p4fc77e6" path="res://scripts/LocaleLook.cs" id="1_lq4no"]
+[ext_resource type="FontFile" uid="uid://dosoh3ynex0yy" path="res://assets/fonts/Takashimura RUS.otf" id="2_rvirl"]
+
+[resource]
+script = ExtResource("1_lq4no")
+Cover = ExtResource("1_2d4rq")
+UiFont = ExtResource("2_rvirl")
+BookFont = ExtResource("1_i8v20")
+MenuFont = ExtResource("2_rvirl")
+metadata/_custom_type_script = "uid://bgwf1p4fc77e6"

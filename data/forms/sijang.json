@@ -1,0 +1,20 @@
+{
+  "id": "sijang",
+  "pages": [
+    { "id": "cover", "title": "PAGE_COVER", "fields": [
+      { "id": "cause", "label": "FIELD_CAUSE" }
+    ]},
+    { "id": "front", "title": "PAGE_FRONT", "fields": [
+      { "id": "head",  "label": "FIELD_HEAD" },
+      { "id": "neck",  "label": "FIELD_NECK" },
+      { "id": "torso", "label": "FIELD_TORSO" }
+    ]},
+    { "id": "back", "title": "PAGE_BACK", "fields": [
+      { "id": "nape", "label": "FIELD_NAPE" },
+      { "id": "back", "label": "FIELD_BACK" }
+    ]},
+    { "id": "weapon", "title": "PAGE_WEAPON", "fields": [
+      { "id": "weapon", "label": "FIELD_WEAPON" }
+    ]}
+  ]
+}

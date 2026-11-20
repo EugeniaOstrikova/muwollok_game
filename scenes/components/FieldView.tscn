@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b47xbmfep6bxb"]
+
+[ext_resource type="Script" uid="uid://bbga5e2w3yajw" path="res://scripts/Components/FieldView.cs" id="1_h1x4w"]
+
+[node name="FieldView" type="PanelContainer" unique_id=1816335784]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BookField"
+script = ExtResource("1_h1x4w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=849199014]
+layout_mode = 2
+
+[node name="FieldLabel" type="Label" parent="VBoxContainer" unique_id=466445988]
+layout_mode = 2
+theme_type_variation = &"BookText"
+
+[node name="FieldValue" type="Label" parent="VBoxContainer" unique_id=1143822817]
+layout_mode = 2
+theme_type_variation = &"BookText"
+autowrap_mode = 2

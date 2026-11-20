@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cjbna1dwdsifc"]
+
+[ext_resource type="Theme" uid="uid://c40nvalwg8684" path="res://ui/main_theme.tres" id="1_avkaa"]
+[ext_resource type="Texture2D" uid="uid://b0qa275pj7s4l" path="res://assets/covers/office_bg.png" id="1_wyssb"]
+[ext_resource type="Script" uid="uid://cmvvacy6ojctv" path="res://scripts/OfficeView.cs" id="2_qf1nj"]
+[ext_resource type="Texture2D" uid="uid://ci17w2lkdljmy" path="res://assets/items/book_1.png" id="2_rep0b"]
+[ext_resource type="Texture2D" uid="uid://d0fysu1xt0h5m" path="res://assets/items/book_2.png" id="3_avkaa"]
+[ext_resource type="Texture2D" uid="uid://c4pcrttqa8imu" path="res://assets/items/note_s.png" id="5_jmoq8"]
+
+[node name="OfficeView" type="Control" unique_id=1677872990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_avkaa")
+script = ExtResource("2_qf1nj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1546000100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wyssb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=391465888]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -303.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 128
+
+[node name="DeskLayout" type="HBoxContainer" parent="MarginContainer" unique_id=404593864]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Book1" type="TextureButton" parent="MarginContainer/DeskLayout" unique_id=2051647018]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Book 1"
+texture_normal = ExtResource("2_rep0b")
+stretch_mode = 5
+
+[node name="Book2" type="TextureButton" parent="MarginContainer/DeskLayout" unique_id=959221437]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("3_avkaa")
+
+[node name="Notes" type="TextureButton" parent="MarginContainer/DeskLayout" unique_id=870566829]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("5_jmoq8")
+stretch_mode = 5

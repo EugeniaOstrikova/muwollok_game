@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b2nett6fc35rj"]
+
+[ext_resource type="Script" uid="uid://upklj0q6m1rj" path="res://scripts/GameScreen.cs" id="1_o75v1"]
+[ext_resource type="PackedScene" uid="uid://cjbna1dwdsifc" path="res://scenes/OfficeView.tscn" id="2_osnef"]
+[ext_resource type="PackedScene" uid="uid://6jftbv3gwfkg" path="res://scenes/DeskView.tscn" id="3_i1jb3"]
+
+[node name="GameScreen" type="Control" unique_id=1306831902]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o75v1")
+
+[node name="OfficeView" parent="." unique_id=1677872990 instance=ExtResource("2_osnef")]
+layout_mode = 1
+
+[node name="DeskView" parent="." unique_id=21563664 instance=ExtResource("3_i1jb3")]
+visible = false
+layout_mode = 1

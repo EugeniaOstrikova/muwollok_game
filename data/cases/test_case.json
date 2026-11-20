@@ -1,0 +1,33 @@
+{
+  "id": "test_case",
+  "documents": [
+    {
+      "id": "chogeom",
+      "form": "sijang",
+      "title": "DOC_CHOGEOM",
+      "values": {
+        "cause":  "TEST_C_CAUSE",
+        "head":   "TEST_C_HEAD",
+        "neck":   "TEST_C_NECK",
+        "torso":  "TEST_TORSO",
+        "nape":   "TEST_INTACT",
+        "back":   "TEST_INTACT",
+        "weapon": "TEST_WEAPON"
+      }
+    },
+    {
+      "id": "bokgeom",
+      "form": "sijang",
+      "title": "DOC_BOKGEOM",
+      "values": {
+        "cause":  "TEST_B_CAUSE",
+        "head":   "TEST_B_HEAD",
+        "neck":   "TEST_B_NECK",
+        "torso":  "TEST_TORSO",
+        "nape":   "TEST_INTACT",
+        "back":   "TEST_INTACT",
+        "weapon": "TEST_WEAPON"
+      }
+    }
+  ]
+}
