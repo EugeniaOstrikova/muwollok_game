@@ -1,5 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://c40nvalwg8684"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qvosd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f53e5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4wrd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqlvf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y1d7"]
 content_margin_left = 10.0
 content_margin_top = 10.0
@@ -41,6 +53,11 @@ default_font_size = 16
 BookText/base_type = &"RichTextLabel"
 DialogueText/base_type = &"RichTextLabel"
 HintText/base_type = &"RichTextLabel"
+IconButton/base_type = &"Button"
+IconButton/styles/focus = SubResource("StyleBoxFlat_qvosd")
+IconButton/styles/hover = SubResource("StyleBoxFlat_f53e5")
+IconButton/styles/normal = SubResource("StyleBoxFlat_d4wrd")
+IconButton/styles/pressed = SubResource("StyleBoxFlat_aqlvf")
 StartMenuButton/base_type = &"Button"
 StartMenuButton/colors/font_color = Color(0, 0, 0, 1)
 StartMenuButton/colors/font_focus_color = Color(0, 0, 0, 1)

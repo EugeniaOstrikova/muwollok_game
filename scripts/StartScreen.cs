@@ -29,7 +29,7 @@ public partial class StartScreen : Control
         ApplyLanguage(selected);
 
         GetNode<Button>("VBoxContainer/StartBtn").Pressed +=
-            () => GetTree().ChangeSceneToFile("res://scenes/Main.tscn");
+            () => GetTree().ChangeSceneToFile("res://scenes/DeskView.tscn");
     }
 
     private void ApplyLanguage(int index)
